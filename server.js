@@ -1,3 +1,12 @@
+const authMiddleware = (req, res, next) => {
+
+    console.log("Middleware ejecutado");
+
+    next();
+
+};
+
+module.exports = authMiddleware;
 const express = require("express");
 const cors = require("cors");
 require("dotenv").config();
