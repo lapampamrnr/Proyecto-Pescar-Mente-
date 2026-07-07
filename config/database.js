@@ -11,3 +11,15 @@ const pool = new Pool({
         rejectUnauthorized: false
     }
 });
+
+// Verificar conexión
+pool.connect((err, client, release) => {
+    if (err) {
+        console.error("❌ Error al conectar con la base de datos:", err.message);
+    } else {
+        console.log("✅ Conectado correctamente a Supabase");
+        release();
+    }
+});
+
+module.exports = pool;
